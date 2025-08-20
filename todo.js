@@ -12,6 +12,8 @@ addTaskButton.addEventListener("click", function() {
   if (task) {
     savedTasks.push(task)
     localStorage.setItem("tasks", JSON.stringify(savedTasks));
+    addTaskToDom(task);
+    taskInput.value = ""
   }
 })
 
