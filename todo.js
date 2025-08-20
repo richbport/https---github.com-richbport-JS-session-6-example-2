@@ -29,5 +29,9 @@ function addTaskToDom(task) {
   deleteButton.textContent = "Delete";
   deleteButton.addEventListener("click", function() {
     taskList.removeChild(li);
-  })
+    savedTasks = savedTasks.filter((t) => t !== task);
+    localStorage.setItem("tasks", JSON.stringify(savedTasks))
+  });
+  li.appendChild(deleteButton);
+  taskList.append(li);
 }
