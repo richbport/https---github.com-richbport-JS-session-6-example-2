@@ -8,7 +8,11 @@ savedTasks.forEach((task) => {
 });
 
 addTaskButton.addEventListener("click", function() {
-  let task =
+  let task = taskInput.value.trim();
+  if (task) {
+    savedTasks.push(task)
+    localStorage.setItem("tasks", JSON.stringify(savedTasks));
+  }
 })
 
 
