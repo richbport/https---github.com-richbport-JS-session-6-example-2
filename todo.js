@@ -1,6 +1,6 @@
-let taskInput = document.addEventListener("taskInput");
-let addTaskButton = document.addEventListener("addTask");
-let taskList = document.addEventListener("taskList");
+let taskInput = document.getElementById("taskInput");
+let addTaskButton = document.getElementById("addTask");
+let taskList = document.getElementById("taskList");
 
 // Loading saved tasks
 let savedTasks = JSON.parse(localStorage.tasks.getItem("tasks")) || [];
@@ -8,7 +8,7 @@ savedTasks.forEach((task) => {
   addTaskToDom(task);
 });
 
-// Add a task
+// Add a new task
 addTaskButton.addEventListener("click", function() {
   let task = taskInput.value.trim();
   if (task) {
@@ -19,7 +19,7 @@ addTaskButton.addEventListener("click", function() {
   }
 })
 
-// Adding a task to the DOM (self explanatory)
+// Function to add a task to the DOM
 function addTaskToDom(task) {
   let li = document.createElement("li");
   li.textContent = task
