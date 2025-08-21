@@ -3,7 +3,7 @@ let addTaskButton = document.getElementById("addTask");
 let taskList = document.getElementById("taskList");
 
 // Loading saved tasks
-let savedTasks = JSON.parse(localStorage.tasks.getItem("tasks")) || [];
+let savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
 savedTasks.forEach((task) => {
   addTaskToDom(task);
 });
