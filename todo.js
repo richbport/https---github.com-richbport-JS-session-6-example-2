@@ -32,6 +32,7 @@ function addTaskToDom(task) {
     savedTasks = savedTasks.filter((t) => t !== task);
     localStorage.setItem("tasks", JSON.stringify(savedTasks))
   });
+
   li.appendChild(deleteButton);
-  taskList.append(li);
+  taskList.appendChild(li);
 }
