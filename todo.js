@@ -5,7 +5,7 @@ let taskList = document.getElementById("taskList");
 // Loading saved tasks
 let savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
 savedTasks.forEach((task) => {
-  addTaskToDom(task);
+  addTaskToDOM(task);
 });
 
 // Add a new task
@@ -14,13 +14,13 @@ addTaskButton.addEventListener("click", function() {
   if (task) {
     savedTasks.push(task)
     localStorage.setItem("tasks", JSON.stringify(savedTasks));
-    addTaskToDom(task);
+    addTaskToDOM(task);
     taskInput.value = ""; // clearing out the input field
   }
 })
 
 // Function to add a task to the DOM
-function addTaskToDom(task) {
+function addTaskToDOM(task) {
   let li = document.createElement("li");
   li.textContent = task
 
